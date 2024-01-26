@@ -1,1 +1,11 @@
-
+- name: Backup file authorized keys
+  copy:
+    src: /root/.ssh/authorized_keys
+    dest: /root/.ssh/authorized_keys_{{ ansible_data_time.iso8601 }}
+    remote_src: yes
+- name: set up authorized_key for ubuntu user
+  authorized_key:
+    user: "{{ item.username }}"
+    key: "{{ item.key }}"
+    state: present
+  with_items: "{{ user_onlyone_add }}"
