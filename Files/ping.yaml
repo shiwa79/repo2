@@ -1,6 +1,6 @@
 ---
 - name: Ejecutar comando ping y crear archvo
-  hosts: 192.168.50.77
+  hosts: all
   tasks:
     - name: Ejecutar comando ping
       command: ping 
