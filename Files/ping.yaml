@@ -5,8 +5,4 @@
     - name: Ejecutar comando ping
       command: ping 
       register: ping_output
-    - name: Crear archivo con el resultado
-      copy:
-        content: "Funciona de puta madre"
-        dest: /home/shiwa/
-      when: ping_output.rc == 0
+           
