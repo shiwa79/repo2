@@ -1,9 +1,9 @@
 ---
 - name: Ejecutar comando ping y crear archvo
-  hosts: all
+  hosts: 192.168.50.77
   tasks:
     - name: Ejecutar comando ping
-      command: ping -c 4 all
+      command: ping 
       register: ping_output
     - name: Crear archivo con el resultado
       copy:
